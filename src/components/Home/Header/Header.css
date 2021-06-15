@@ -1,0 +1,49 @@
+.header {
+  background: #fafafa;
+  height: 100vh;
+  background-image: url(../../../images/service/medicine-6e8ebb087020b94d3aeae59c5c51744f.png);
+  background-size: cover;
+  position: relative;
+}
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-content .title {
+  font-size: 45px;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin: 0 0 15px;
+}
+.header-content .subtitle {
+  font-size: 19px;
+  color: #77798c;
+  margin: 0 0 60px;
+  font-family: "Lato", sans-serif;
+}
+.header-content .search-field {
+  border-radius: 0px;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px 10px 0px rgb(209 209 209 / 90%);
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.search-field:focus,
+.search-btn:focus {
+  box-shadow: none;
+  outline: none;
+  border: 1px solid transparent;
+}
+.header-content .search-btn {
+  background: #019376;
+  padding: 10px 30px;
+  border-radius: 0px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
