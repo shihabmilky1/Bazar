@@ -1,15 +1,14 @@
 .header {
   background: #fafafa;
   height: 100vh;
-  background-image: url(../../../images/service/medicine-6e8ebb087020b94d3aeae59c5c51744f.png);
+  background-image: url(../../../images/service/furniture-1653225bd210688946d20a4b28cf8b0e.png);
   background-size: cover;
   position: relative;
 }
 .header-content {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-15%, -50%);
 }
 .header-content .title {
   font-size: 45px;

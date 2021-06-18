@@ -1,0 +1,32 @@
+.swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  display: none;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next,
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  left: 0px !important;
+  right: auto !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: white !important;
+  border-radius: 50% !important;
+  color: #019276 !important;
+  box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px !important;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 0px !important;
+  left: auto !important;
+}
+.service-container {
+  padding: 100px 30px;
+}

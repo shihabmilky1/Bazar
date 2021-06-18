@@ -1,0 +1,28 @@
+.card {
+  position: relative;
+}
+.badge {
+  background-color: orange;
+  color: white;
+  width: 40px;
+  position: absolute;
+  right: 10px;
+}
+.sidebar-container {
+  background: #fff;
+  height: 100vh;
+  margin-top: -14px;
+  padding-top: 0;
+}
+.sidebar li a {
+  padding: 15px 40px !important;
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  margin: 15px 0px;
+}
+.sidebar li a:hover {
+  color: #019376;
+}

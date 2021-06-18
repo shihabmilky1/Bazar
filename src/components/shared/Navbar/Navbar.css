@@ -4,24 +4,25 @@
   font-size: 26px;
 }
 .navbar-name:hover {
-  color: #019376;
+  color: #019376 !important;
 }
 .navlink {
   font-size: 15px;
-  color: black;
+  color: black !important;
   font-weight: 700;
   margin-left: 20px;
   font-family: "Lato", sans-serif;
 }
 .navlink:hover {
-  color: #019376;
+  color: #019376 !important;
 }
 .join-button {
   padding: 10px 15px !important;
   background: #019276;
-  color: #fff;
+  color: #fff !important;
   border-radius: 6px;
 }
 .join-button:hover {
-  color: white;
+  color: white !important;
+  background: #019275d7;
 }
