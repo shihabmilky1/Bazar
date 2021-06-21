@@ -19,7 +19,7 @@ const Product = () => {
                     </div>
                     <div className="col-md-10">
                         <div className="row my-5">
-                            {allProduct.map(product => <SingleProduct {...product}></SingleProduct>)}
+                            {allProduct.map(product => <SingleProduct product={product}></SingleProduct>)}
                         </div>
                     </div>
 

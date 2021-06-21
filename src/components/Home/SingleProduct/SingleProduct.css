@@ -4,15 +4,17 @@
 .badge {
   background-color: orange;
   color: white;
-  width: 40px;
+  width: 45px;
   position: absolute;
-  right: 10px;
+  right: 15px;
+  top: 15px;
 }
 .sidebar-container {
   background: #fff;
   height: 100vh;
   margin-top: -14px;
   padding-top: 0;
+  z-index: 0;
 }
 .sidebar li a {
   padding: 15px 40px !important;

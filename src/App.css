@@ -3,3 +3,6 @@ font-family: 'Poppins', sans-serif; */
 .common-color {
   color: #019376;
 }
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: hsla(0, 0%, 0%, 0.5) !important;
+}

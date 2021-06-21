@@ -5,7 +5,7 @@ const allProduct = [
         img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
         price: '250',
         salePrice: '250',
-        discount: '0',
+        discount: '3',
         quantity: '1',
         type: 'Bed',
         categories: 'Master Bad'
@@ -16,7 +16,7 @@ const allProduct = [
         img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
         price: '250',
         salePrice: '250',
-        discount: '0',
+        discount: '60',
         quantity: '1',
         type: 'Bed',
         categories: 'Master Bad'
@@ -27,7 +27,7 @@ const allProduct = [
         img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
         price: '250',
         salePrice: '250',
-        discount: '0',
+        discount: '100',
         quantity: '1',
         type: 'Bed',
         categories: 'Master Bad'
@@ -58,9 +58,9 @@ const allProduct = [
         name: 'Deluxe Mahagony Double Bed',
         description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
         img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
+        price: '199',
         salePrice: '250',
-        discount: '10',
+        discount: '13',
         quantity: '1',
         type: 'Bed',
         categories: 'Master Bad'
