@@ -1,0 +1,76 @@
+.checkout-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  z-index: 1;
+  transition: all 0.5s ease-out;
+}
+.close-btn {
+  text-align: end;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: red;
+  transition: all 0.3s;
+}
+.checkout-sidebar-header {
+  border-bottom: 1px solid lightgray;
+  padding: 20px !important;
+}
+.item-count i {
+  font-size: 23px;
+  color: #019376;
+}
+.item-count p {
+  color: #019376;
+  font-family: "Lato", "sans-serif";
+  margin-left: 10px;
+  font-weight: bold;
+}
+.item-empty p {
+  font-weight: bold;
+  font-family: "Lato", "sans-serif";
+  color: rgb(119, 121, 140);
+  font-size: 15px;
+  padding: 40px 0;
+  text-align: center;
+}
+.checkout-btn {
+  background: #019376;
+  width: 360px;
+  margin: 20px;
+  color: white;
+  border-radius: 180px;
+  position: relative;
+  padding: 10px;
+}
+.checkout-btn p {
+  padding-left: 15px;
+  color: white;
+}
+.checkout-btn:hover p {
+  color: #fff;
+}
+.checkout-btn:hover .btn {
+  color: #019376;
+}
+.price-button {
+  margin: 0;
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  font-weight: bold;
+  font-family: "Lato", "sans-serif";
+  height: 42px;
+  margin: 1px;
+  font-size: 14px;
+}

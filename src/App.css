@@ -57,6 +57,15 @@ font-family: 'Poppins', sans-serif; */
   font-size: 17px;
   padding-right: 7px;
 }
+.btn:focus {
+  box-shadow: none;
+}
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 @keyframes slide {
   0% {

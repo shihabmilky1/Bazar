@@ -1,7 +1,6 @@
 import { createContext, useState } from 'react';
 import './App.css';
 import Home from './components/Home/Home/Home';
-import CartButton from './components/shared/Cart/CartButton';
 
 export const ApplicationProvider = createContext()
 function App() {
@@ -9,7 +8,6 @@ function App() {
   return (
     <ApplicationProvider.Provider value={[cart, setCart]}>
       <Home />
-      <CartButton />
     </ApplicationProvider.Provider>
   );
 }
