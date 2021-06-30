@@ -28,9 +28,22 @@ const ProductPopUp = ({ modalIsOpen, setIsOpen, product }) => {
     }
     const discountTotalPrice = (parseInt(price) - parseInt(discount));
 
+
+
     const addCart = (product) => {
         setCart([...cart, product])
+        const added = cart.find(item => item.id === product.id)
+        console.log(added);
+        if (added) {
+            const remaining = cart.filter(item => item.id !== product)
+            setCart(remaining)
+        } else {
+            const newCart = [...cart, product]
+            setCart(newCart)
+        }
+
     }
+
 
     return (
         <>

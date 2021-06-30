@@ -8,7 +8,8 @@ const allProduct = [
         discount: '0',
         quantity: '1',
         type: 'Bed',
-        categories: 'Master Bad'
+        categories: 'Master Bad',
+        id: 1
     },
     {
         name: 'Ash Double Bed',
@@ -19,7 +20,8 @@ const allProduct = [
         discount: '60',
         quantity: '1',
         type: 'Bed',
-        categories: 'Master Bad'
+        categories: 'Master Bad',
+        id: 2
     },
     {
         name: 'Brown Hardwood Double Bed',
@@ -30,184 +32,9 @@ const allProduct = [
         discount: '100',
         quantity: '1',
         type: 'Bed',
-        categories: 'Master Bad'
+        categories: 'Master Bad',
+        id: 3
     },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '10',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    },
-    {
-        name: 'Deluxe Mahagony Double Bed',
-        description: 'A bed is a piece of furniture which is used as a place to sleep or relax.',
-        img: 'https://s3.amazonaws.com/redqteam.com/pickbazar/furniture/Ash.png',
-        price: '250',
-        salePrice: '250',
-        discount: '50',
-        quantity: '1',
-        type: 'Bed',
-        categories: 'Master Bad'
-    }
 ]
 
 export default allProduct;
