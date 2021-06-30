@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Modal from 'react-modal';
+import { ApplicationProvider } from '../../../App';
 import './ProductPopUp.css'
 const customStyles = {
     content: {
@@ -16,14 +17,21 @@ const customStyles = {
     },
 };
 Modal.setAppElement('#root');
+
+
+
 const ProductPopUp = ({ modalIsOpen, setIsOpen, product }) => {
+    const [cart, setCart] = useContext(ApplicationProvider)
     const { name, img, description, quantity, categories, price, discount } = product;
     function closeModal() {
         setIsOpen(false);
     }
-    const discountPrice = (100 / parseInt(discount));
-    const discountTotalPrice = (parseInt(price) / discountPrice);
-    const totalPrice = Math.ceil(parseInt(price) - discountTotalPrice)
+    const discountTotalPrice = (parseInt(price) - parseInt(discount));
+
+    const addCart = (product) => {
+        setCart([...cart, product])
+    }
+
     return (
         <>
             <Modal
@@ -38,8 +46,8 @@ const ProductPopUp = ({ modalIsOpen, setIsOpen, product }) => {
                 <div className="container p-0 m-0">
                     <div className="row mx-auto">
                         <div className="col-md-6 p-0 m-0" style={{ borderRight: '1px solid #ececec', position: 'relative' }}>
-                            <img className="img-fluid" src={img} />
-                            {discount === '0' ? '' : <span className="badge badge-warning">{discount}%</span>}
+                            <img className="img-fluid" src={img ? img : ''} />
+                            {discount === '0' ? '' : <span className="badge badge-warning">-${discount}</span>}
                         </div>
                         <div className="col-md-6 p-5">
                             <h5 className="name">{name}</h5>
@@ -48,21 +56,19 @@ const ProductPopUp = ({ modalIsOpen, setIsOpen, product }) => {
                             <span className="categories mt-4">{categories}</span>
                             <div className="price-cart d-flex align-items-center justify-content-between">
                                 <div className=" d-flex align-items-center justify-content-between">
-
-                                    <p className={discountTotalPrice >= 0 ? 'price' : ""}>
-                                        {discountTotalPrice > 0 ? '$' + totalPrice : ""}
+                                    <p className={discount >= 0 ? 'price' : "discountPrice"}>
+                                        {discount > 0 ? '$' + discountTotalPrice : ""}
                                     </p>
-                                    <p className={discountTotalPrice <= 0 ? 'price' : "discountPrice ms-3"}>
+                                    <p className={discount <= 0 ? 'price' : "discountPrice ms-3"}>
                                         ${price}
                                     </p>
                                 </div>
-                                <button className="btn cart"><i className="fas fa-bags-shopping me-1"></i> Cart</button>
+                                <button onClick={() => addCart(product)} className="btn cart"><i className="fas fa-bags-shopping me-1"></i> Cart</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </Modal>
-
         </>
     );
 };

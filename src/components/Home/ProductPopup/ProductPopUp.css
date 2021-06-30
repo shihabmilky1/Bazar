@@ -9,7 +9,8 @@
   text-align: center;
   line-height: 40px;
   border-radius: 35px;
-  top: -80px;
+  top: -35px;
+  z-index: 10 !important;
 }
 .name {
   color: #0d1136;
@@ -20,7 +21,7 @@
 .quantity {
   color: #77798c;
   font-family: "Lato", "sans-serif";
-  font: size 13px;
+  font-size: 13px;
 }
 .description {
   font: size 15px;

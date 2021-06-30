@@ -6,6 +6,7 @@
 .navbar-name:hover {
   color: #019376 !important;
 }
+
 .navlink {
   font-size: 15px;
   color: black !important;
@@ -25,4 +26,19 @@
 .join-button:hover {
   color: white !important;
   background: #019275d7;
+}
+.sticky-navbar {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 60px;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  transition: all 2s;
 }
