@@ -69,7 +69,7 @@ label {
 .login-bottom-link:hover {
   color: black;
 }
-@media (min-width: 467px) {
+@media (min-width: 367px) {
   .login-container {
     max-width: 800px;
     height: auto;

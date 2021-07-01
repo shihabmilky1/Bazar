@@ -34,7 +34,6 @@ const SignUp = () => {
                                 </div>
                                 <div className="signup-another-away">
                                     <button className="btn  my-2 google-login"><i className="me-2 fab fa-google"></i> Continue with Google</button>
-                                    <button className="btn  my-2 facebook-login"><i className="me-2 fab fa-facebook"></i> Continue with Facebook</button>
                                 </div>
                                 <div className="text-center mt-1">
                                     <span className="me-1 text-muted login-link">Already have account</span><Link className="login-bottom-link" to="/login">Login</Link>

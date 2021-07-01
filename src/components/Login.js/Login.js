@@ -29,8 +29,7 @@ const Login = () => {
                                     <hr className="w-25" />
                                 </div>
                                 <div className="login-another-away text-center">
-                                    <button className="btn  my-2 google-login"><i className="ms-2 fab fa-google"></i> Continue with Google</button>
-                                    <button className="btn  my-2 facebook-login"><i className="ms-2 fab fa-facebook"></i>  Continue with Facebook</button>
+                                    <button className="btn  my-2 google-login"><i className="me-2 fab fa-google"></i> Continue with Google</button>
                                 </div>
                                 <div className="text-center mt-1">
                                     <span className="me-1 text-muted login-link">Don't Have Account</span><Link className="login-bottom-link" to="/signup">Sign Up</Link>

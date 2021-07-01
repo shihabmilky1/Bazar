@@ -6,6 +6,7 @@
   background: #fff;
   padding: 40px 55px 40px 25px;
   border-radius: 10px;
+  margin: 10px 0;
 }
 .signup-container {
   max-width: 800px;
@@ -69,7 +70,7 @@ label {
 .login-bottom-link:hover {
   color: black;
 }
-@media (min-width: 467px) {
+@media (min-width: 367px) {
   .signup-container {
     max-width: 800px;
     height: auto;
@@ -77,5 +78,15 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -35%);
+  }
+}
+@media (min-width: 1295px) {
+  .signup-container {
+    max-width: 800px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
   }
 }
