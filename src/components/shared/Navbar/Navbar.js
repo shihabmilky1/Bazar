@@ -5,7 +5,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 const Navbar = ({ color }) => {
     return (
-        <nav className="navbar navbar-expand-lg" style={{ background: color }}>
+        <nav className="navbar navbar-expand" style={{ background: color }}>
             <div className="container">
                 <Link className="navbar-brand navbar-name common-color" to="/">Bazar</Link>
                 <button className="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ const Navbar = ({ color }) => {
                             <Link className="nav-link navlink" to="/help"><FontAwesomeIcon className="me-1" icon={faQuestionCircle} /> Need Help</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link navlink join-button" to="/">Join</Link>
+                            <Link className="nav-link navlink join-button" to="/signup">Join</Link>
                         </li>
                     </ul>
                 </div>

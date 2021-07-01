@@ -7,6 +7,8 @@ import {
   Route,
 } from "react-router-dom";
 import Help from './components/Help/Help';
+import SignUp from './components/SignUp/SignUp';
+import Login from './components/Login.js/Login';
 export const ApplicationProvider = createContext()
 function App() {
   const [cart, setCart] = useState([])
@@ -22,6 +24,12 @@ function App() {
           </Route>
           <Route path='/help'>
             <Help />
+          </Route>
+          <Route path='/signup'>
+            <SignUp />
+          </Route>
+          <Route path='/login'>
+            <Login />
           </Route>
         </Switch>
       </Router>
