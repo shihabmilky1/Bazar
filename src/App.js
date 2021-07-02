@@ -9,6 +9,7 @@ import {
 import Help from './components/Help/Help';
 import SignUp from './components/LoginManager/SignUp/SignUp';
 import Login from './components/LoginManager/Login.js/Login';
+import TermsAndService from './components/Privacy/TremsAndService/TermsAndService';
 import PrivetRoute from './components/LoginManager/PrivetRoute/PrivetRoute';
 import toast, { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
@@ -46,6 +47,12 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/terms'>
+            <TermsAndService />
+          </Route>
+          <Route path='/privacy'>
+            <TermsAndService />
           </Route>
         </Switch>
       </Router>

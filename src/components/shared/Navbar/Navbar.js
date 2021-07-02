@@ -9,7 +9,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import UserIcon from '../../../images/user.png'
 import toast from 'react-hot-toast';
-const Navbar = ({ color }) => {
+const Navbar = ({ color, sticky }) => {
     const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
     const handleUserSignOut = () => {
         firebase.auth().signOut().then(() => {
@@ -21,7 +21,7 @@ const Navbar = ({ color }) => {
         });
     }
     return (
-        <nav className="navbar navbar-expand" style={{ background: color }}>
+        <nav className={`navbar navbar-expand  ${sticky ? 'fixed-top shadow bg-white' : 'shadow-sm'}`} style={{ padding: sticky ? '1px' : '', transition: '.2s' }}>
             <div className="container">
                 <Link className="navbar-brand navbar-name common-color" to="/">Bazar</Link>
                 <button className="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,8 +45,8 @@ const Navbar = ({ color }) => {
                             <ul className="dropdown-menu shadow" aria-labelledby="navbarDropdown">
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Profile</Link></li>
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Your Order</Link></li>
-                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Terms and Service</Link></li>
-                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Privacy Policy</Link></li>
+                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/terms">Terms and Service</Link></li>
+                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/privacy">Privacy Policy</Link></li>
                                 <li><span onClick={handleUserSignOut} className="dropdown-item dropdownlink ms-2 pe-4 my-3" >Logout</span></li>
                             </ul>
                         </li>}

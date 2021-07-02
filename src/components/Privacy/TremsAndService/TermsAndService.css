@@ -1,0 +1,51 @@
+.privacy-data {
+  padding-top: 20%;
+}
+.terms-header-title {
+  padding: 50px 40px 30px;
+}
+.terms-header-title h2 {
+  color: #009e7f;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+.terms-header-title p {
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+}
+.terms-sidebar-bar ul {
+  list-style: none;
+}
+.terms-sidebar-bar li {
+  padding: 10px;
+}
+.terms-sidebar-bar li a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.terms-sidebar-bar li a:hover {
+  color: #009e7f;
+}
+.terms-sidebar-bar {
+  padding-top: 90px;
+}
+.privacy-data h3 {
+  font-size: 24px;
+  margin: 0px 0px 20px;
+  color: #0d1136;
+  font-family: "Poppins", "sans-serif";
+  font-weight: 600;
+  line-height: 43.2px;
+}
+.privacy-data p {
+  font-size: 15px;
+  font-family: "Lato", "sans-serif";
+  margin: 0px 0px 20px;
+  color: #424561;
+  line-height: 27px;
+}
