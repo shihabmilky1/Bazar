@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './SignUp.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../firebase.config';
 import toast from 'react-hot-toast';
 import { useForm } from "react-hook-form";
+import { ApplicationProvider } from '../../../App';
 
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
-
-
 const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const handleGoogleSignIn = () => {
         const loading = toast.loading('Please Wait')
 
@@ -37,6 +41,7 @@ const SignUp = () => {
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then((res) => {
                         const user = res.user;
+                        updateName(name)
                         toast.dismiss(loading)
                         handleResponse(res)
                     })
@@ -46,10 +51,22 @@ const SignUp = () => {
                         toast.error(errorMessage)
                     });
             }
+            if (password !== confirmPassword) {
+                toast.dismiss(loading)
+                toast.error('Password and Confirm Password Not Match')
+            }
         }
     };
+    const updateName = (name) => {
+        const user = firebase.auth().currentUser;
+        user.updateProfile({
+            displayName: name,
+        })
+    }
     const handleResponse = (res) => {
-        toast.success('Login successful')
+        setUser(res.user)
+        toast.success('Login Success')
+        history.replace(from);
     }
     return (
         <section className="signup-section">

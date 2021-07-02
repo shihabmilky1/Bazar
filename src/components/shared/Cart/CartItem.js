@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ApplicationProvider } from '../../../App';
 const CartItem = ({ product }) => {
-    const [cart, setCart] = useContext(ApplicationProvider)
+    const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
     const deleteProduct = (product) => {
         console.log(product.id);
         const deleteItem = cart.filter(item => item.id !== product.id);

@@ -3,7 +3,7 @@ import { ApplicationProvider } from '../../../App';
 import CheckoutSidebar from './CheckoutSidebar'
 
 const CartButton = () => {
-    const [cart, setCart] = useContext(ApplicationProvider)
+    const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
     const [checkoutSidebarOpen, setCheckoutSidebarOpen] = useState(false)
     const cartTotal = cart.reduce((total, cart) => total + parseInt(cart.price), 0)
     const cartTotalDiscount = cart.reduce((total, cart) => total + parseInt(cart.discount), 0)

@@ -21,7 +21,7 @@ Modal.setAppElement('#root');
 
 
 const ProductPopUp = ({ modalIsOpen, setIsOpen, product }) => {
-    const [cart, setCart] = useContext(ApplicationProvider)
+    const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
     const { name, img, description, quantity, categories, price, discount } = product;
     function closeModal() {
         setIsOpen(false);

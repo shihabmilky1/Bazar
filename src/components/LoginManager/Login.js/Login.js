@@ -1,25 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import './Login.css'
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../firebase.config';
 import toast from 'react-hot-toast';
 import { useForm } from "react-hook-form";
+import { ApplicationProvider } from '../../../App';
 
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const handleGoogleSignIn = () => {
         const loading = toast.loading('Please Wait')
-
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
             .signInWithPopup(provider)
             .then((res) => {
-                const user = res.user;
+                const users = res.user;
+                console.log(res);
+                console.log(users);
                 toast.dismiss(loading);
                 handleResponse(res)
             }).catch((error) => {
@@ -29,7 +36,9 @@ const Login = () => {
             });
     }
     const handleResponse = (res) => {
+        setUser(res.user)
         toast.success('Login Success')
+        history.replace(from);
     }
     const onSubmit = data => {
         const { email, password } = data

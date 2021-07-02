@@ -7,7 +7,7 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 
 
 const CheckoutSidebar = ({ checkoutSidebarOpen, setCheckoutSidebarOpen }) => {
-    const [cart, setCart] = useContext(ApplicationProvider);
+    const [cart, setCart, user, setUser] = useContext(ApplicationProvider);
     const totalAmount = cart.reduce((total, cart) => total + parseInt(cart.price), 0)
     const totalDiscountAmount = cart.reduce((total, cart) => total + parseInt(cart.discount), 0)
     return (

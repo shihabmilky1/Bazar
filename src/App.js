@@ -9,13 +9,28 @@ import {
 import Help from './components/Help/Help';
 import SignUp from './components/LoginManager/SignUp/SignUp';
 import Login from './components/LoginManager/Login.js/Login';
-import { Toaster } from 'react-hot-toast';
+import PrivetRoute from './components/LoginManager/PrivetRoute/PrivetRoute';
+import toast, { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
+import firebase from "firebase/app";
+import "firebase/auth";
 
 export const ApplicationProvider = createContext()
 function App() {
   const [cart, setCart] = useState([])
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user)
+      } else {
+        toast.error('Something went wrong')
+      }
+    });
+
+  }, [])
   return (
-    <ApplicationProvider.Provider value={[cart, setCart]}>
+    <ApplicationProvider.Provider value={[cart, setCart, user, setUser]}>
       <Router>
         <Toaster />
         <Switch>
