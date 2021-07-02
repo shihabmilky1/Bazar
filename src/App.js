@@ -23,8 +23,6 @@ function App() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setUser(user)
-      } else {
-        toast.error('Something went wrong')
       }
     });
 

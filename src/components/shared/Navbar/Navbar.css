@@ -7,15 +7,21 @@
   color: #019376 !important;
 }
 
-.navlink {
+.navlink,
+.dropdownlink {
   font-size: 15px;
   color: black !important;
   font-weight: 700;
   margin-left: 20px;
   font-family: "Lato", sans-serif;
+  cursor: pointer;
 }
-.navlink:hover {
+.navlink:hover,
+.dropdownlink:hover {
   color: #019376 !important;
+}
+.dropdownlink:hover {
+  background: transparent;
 }
 .join-button {
   padding: 10px 15px !important;
@@ -41,4 +47,18 @@
   width: 100%;
   top: 0;
   transition: all 2s;
+}
+.user-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+.dropdown-menu[data-bs-popper] {
+  left: -135px;
+}
+#navbarDropdown:after {
+  display: none;
+}
+.dropdown-menu {
+  border: 0px;
 }
