@@ -70,6 +70,14 @@ label {
 .login-bottom-link:hover {
   color: black;
 }
+form p {
+  color: red;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+  margin: 0 15px;
+}
+
+/* responsive */
 @media (min-width: 367px) {
   .signup-container {
     max-width: 800px;

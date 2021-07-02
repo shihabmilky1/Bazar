@@ -7,14 +7,17 @@ import {
   Route,
 } from "react-router-dom";
 import Help from './components/Help/Help';
-import SignUp from './components/SignUp/SignUp';
-import Login from './components/Login.js/Login';
+import SignUp from './components/LoginManager/SignUp/SignUp';
+import Login from './components/LoginManager/Login.js/Login';
+import { Toaster } from 'react-hot-toast';
+
 export const ApplicationProvider = createContext()
 function App() {
   const [cart, setCart] = useState([])
   return (
     <ApplicationProvider.Provider value={[cart, setCart]}>
       <Router>
+        <Toaster />
         <Switch>
           <Route exact path='/'>
             <Home />
