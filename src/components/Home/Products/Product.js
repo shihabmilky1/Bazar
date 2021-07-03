@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import allProduct from '../../../product';
 import SingleProduct from '../SingleProduct/SingleProduct';
+import Bed from '../../../images/bed.PNG'
+import Sofa from '../../../images/sofa.PNG'
+import Tabel from '../../../images/table.PNG'
+import Chair from '../../../images/chair.PNG'
 const Product = () => {
 
     return (
@@ -11,10 +15,10 @@ const Product = () => {
                     <div className="col-md-2">
                         <div className="sidebar-container sticky-top" >
                             <ul className="list-unstyled sidebar">
-                                <li><a href="">Bed</a></li>
-                                <li><a href="">Chair</a></li>
-                                <li><a href="">Sofa</a></li>
-                                <li><a href="">Table</a></li>
+                                <li><a href=""><img src={Bed} className="" style={{ width: '15px', marginRight: '10px' }} /> Bed</a></li>
+                                <li><a href=""><img src={Chair} className="" style={{ width: '15px', marginRight: '10px' }} /> Chair</a></li>
+                                <li><a href=""><img src={Sofa} className="" style={{ width: '15px', marginRight: '10px' }} /> Sofa</a></li>
+                                <li><a href=""><img src={Tabel} className="" style={{ width: '15px', marginRight: '10px' }} /> Table</a></li>
                             </ul>
                         </div>
                     </div>

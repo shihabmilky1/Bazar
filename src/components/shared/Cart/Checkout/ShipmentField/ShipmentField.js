@@ -88,6 +88,7 @@ const ShipmentField = () => {
                     <button onClick={handleIsSubmittedAddress} className={shipmentData ? 'btn' : 'btn disabled'}>Submit Address</button>
                 </div>
             </div>
+
             {/* Stripe Payment */}
             <div className={isSubmitAddress ? "address-section p-4 shadow bg-white my-4 d-block" : 'd-none'}>
                 <div className="header-section d-flex align-items-center justify-content-between">
