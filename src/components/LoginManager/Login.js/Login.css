@@ -31,10 +31,13 @@
 label {
   margin: 0 15px;
 }
+.form-control {
+  border: 1px solid #f4f4f4;
+}
 .form-control:focus {
   box-shadow: none;
   outline: none;
-  border: 1px solid red;
+  border: 1px solid #009e7f;
 }
 .login-another-away {
   display: flex;

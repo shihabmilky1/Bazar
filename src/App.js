@@ -10,8 +10,9 @@ import Help from './components/Help/Help';
 import SignUp from './components/LoginManager/SignUp/SignUp';
 import Login from './components/LoginManager/Login.js/Login';
 import TermsAndService from './components/Privacy/TremsAndService/TermsAndService';
+import Checkout from './components/shared/Cart/Checkout/Checkout';
 import PrivetRoute from './components/LoginManager/PrivetRoute/PrivetRoute';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -21,9 +22,9 @@ function App() {
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user)
+    firebase.auth().onAuthStateChanged((isUser) => {
+      if (isUser) {
+        setUser(isUser)
       }
     });
 
@@ -54,6 +55,9 @@ function App() {
           <Route path='/privacy'>
             <TermsAndService />
           </Route>
+          <PrivetRoute path='/checkout'>
+            <Checkout />
+          </PrivetRoute>
         </Switch>
       </Router>
     </ApplicationProvider.Provider>

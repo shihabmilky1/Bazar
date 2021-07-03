@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import './Login.css'
 import firebase from "firebase/app";
@@ -14,6 +14,14 @@ import { ApplicationProvider } from '../../../App';
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((isUser) => {
+            if (isUser) {
+                setUser(isUser)
+                history.replace(from);
+            }
+        });
+    }, [])
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
@@ -35,11 +43,7 @@ const Login = () => {
                 toast.error(errorMessage)
             });
     }
-    const handleResponse = (res) => {
-        setUser(res.user)
-        toast.success('Login Success')
-        history.replace(from);
-    }
+
     const onSubmit = data => {
         const { email, password } = data
         const loading = toast.loading('Please wait...');
@@ -58,6 +62,11 @@ const Login = () => {
 
         }
     };
+    const handleResponse = (res) => {
+        setUser(res.user)
+        toast.success('Login Success')
+        history.replace(from);
+    }
     return (
         <section className="login-section">
             <div className="container login-container">

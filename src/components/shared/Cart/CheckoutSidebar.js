@@ -4,12 +4,13 @@ import './CheckoutSidebar.css'
 import NotFound from '../../../images/not-found.PNG'
 import CartItem from './CartItem'
 import { Scrollbars } from 'react-custom-scrollbars-2';
-
+import { useHistory } from 'react-router';
 
 const CheckoutSidebar = ({ checkoutSidebarOpen, setCheckoutSidebarOpen }) => {
     const [cart, setCart, user, setUser] = useContext(ApplicationProvider);
     const totalAmount = cart.reduce((total, cart) => total + parseInt(cart.price), 0)
     const totalDiscountAmount = cart.reduce((total, cart) => total + parseInt(cart.discount), 0)
+    const history = useHistory()
     return (
         <div className="checkout-sidebar shadow"
             style={{ transform: `${checkoutSidebarOpen ? 'translateX(0)' : 'translateX(100%)'}` }}
@@ -43,7 +44,7 @@ const CheckoutSidebar = ({ checkoutSidebarOpen, setCheckoutSidebarOpen }) => {
                 }
             </div>
             <div className="checkout-sidebar-bottom">
-                <div className="btn checkout-btn d-flex justify-content-between align-items-center">
+                <div onClick={() => history.push('/checkout')} className="btn checkout-btn d-flex justify-content-between align-items-center">
                     <p className="my-0">Checkout</p>
                     <button className="price-button btn btn-card">$ {totalAmount - totalDiscountAmount}</button>
                 </div>

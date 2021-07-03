@@ -13,7 +13,7 @@ const CartItem = ({ product }) => {
             <img className="w-25 me-3" src={product.img} alt="" />
             <div className="product-detail mb-2 w-100">
                 <h6 className="line-clamp mb-2">{product.name}</h6>
-                <p className="common-color fw-bold">${product.price}</p>
+                <p className="common-color fw-bold">${parseInt(product.price - product.discount)}</p>
             </div>
             <div className="d-flex justify-content-end">
                 <i onClick={() => deleteProduct(product)} class="fal fa-times close-btn"></i>
