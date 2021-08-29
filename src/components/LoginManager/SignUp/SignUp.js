@@ -16,7 +16,7 @@ const SignUp = () => {
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
-
+    console.log(user)
     const handleGoogleSignIn = () => {
         const loading = toast.loading('Please Wait')
 
@@ -67,6 +67,7 @@ const SignUp = () => {
         setUser(res.user)
         toast.success('Login Success')
         history.replace(from);
+
     }
     return (
         <section className="signup-section">

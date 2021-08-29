@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
@@ -32,6 +32,7 @@ const Navbar = ({ color, sticky }) => {
                         <li className="nav-item">
                             <Link className="nav-link navlink active" to="/">Offer</Link>
                         </li>
+
                         <li class="nav-item">
                             <Link className="nav-link navlink" to="/help"><FontAwesomeIcon className="me-1" icon={faQuestionCircle} /> Need Help</Link>
                         </li>

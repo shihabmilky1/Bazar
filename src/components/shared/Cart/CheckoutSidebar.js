@@ -43,10 +43,10 @@ const CheckoutSidebar = ({ checkoutSidebarOpen, setCheckoutSidebarOpen }) => {
                     )
                 }
             </div>
-            <div className="checkout-sidebar-bottom">
+            <div className="checkout-sidebar-bottom disabled">
                 <div onClick={() => history.push('/checkout')} className="btn checkout-btn d-flex justify-content-between align-items-center">
                     <p className="my-0">Checkout</p>
-                    <button className="price-button btn btn-card">$ {totalAmount - totalDiscountAmount}</button>
+                    <button className="price-button btn btn-card" >$ {totalAmount - totalDiscountAmount}</button>
                 </div>
             </div>
         </div>

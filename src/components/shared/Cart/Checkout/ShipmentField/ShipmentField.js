@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { ApplicationProvider } from '../../../../../App';
+import PaymentProcess from '../../Payment/PaymentProcess/PaymentProcess';
 import AddShipmentAddress from '../AddShipmentAddress/AddShipmentAddress'
 const ShipmentField = () => {
     const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
@@ -7,6 +8,10 @@ const ShipmentField = () => {
     const [shipmentData, setShipmentData] = useState(null);
     const [isSubmitAddress, setIsSubmitAddress] = useState(null);
     const [deliveryService, setDeliveryService] = useState('90 min express delivery');
+    const [paymentOption, setPaymentOption] = useState('');
+
+
+
     function openModal() {
         setIsOpen(true);
     }
@@ -14,13 +19,32 @@ const ShipmentField = () => {
         setIsOpen(false);
     }
     const onSubmit = data => {
-        console.log(data)
-
         if (data) {
             setShipmentData(data)
             setIsOpen(false);
         }
     };
+    const handlePaymentStatus = (paymentID) => {
+        const orderDetail = {
+            user: { ...user },
+            shipmentData,
+            paymentID,
+            date: new Date(),
+            cart,
+            process: 'Pending'
+        }
+        fetch('https://intense-reef-39470.herokuapp.com/submitOrder', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderDetail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Order Success')
+                }
+            })
+    }
     const handleIsSubmittedAddress = () => {
         setIsSubmitAddress(shipmentData)
     }
@@ -45,7 +69,8 @@ const ShipmentField = () => {
                             <div onClick={openModal} className="shipment-address-data delivery-address-active">
                                 <h6>{shipmentData?.name}</h6>
                                 <p>{shipmentData?.address}</p>
-                            </div>)
+                            </div>
+                        )
                     }
                 </div>
                 <div className="address-section p-4 shadow bg-white my-4">
@@ -97,9 +122,19 @@ const ShipmentField = () => {
                         <h5 className="ms-4">Payment Option</h5>
                     </div>
                 </div>
-                <div className="payment-button my-3">
-                    <button className={cart.length === 0 ? 'btn disabled' : 'btn'}>Proceed To Checkout</button>
-                </div>
+                {cart.length > 0 &&
+                    <div style={{ marginTop: '15px', display: paymentOption ? 'none' : 'block', }}>
+                        <i class="fab fa-cc-stripe" onClick={() => setPaymentOption('stripe')} style={{ fontSize: '100px', color: '#6772E5', margin: '20px', cursor: 'pointer' }}></i>
+                    </div>
+                }
+                {paymentOption === 'stripe' && <PaymentProcess handlePaymentStatus={handlePaymentStatus} />}
+                {/* <PaymentProcess /> */}
+                {
+                    cart.length <= 0 &&
+                    <div className="">
+                        <h5 className="mt-3 text-center">Your Cart is Empty</h5>
+                    </div>
+                }
             </div>
             <AddShipmentAddress modalIsOpen={modalIsOpen} closeModal={closeModal} onSubmit={onSubmit} shipmentData={shipmentData} />
         </>
