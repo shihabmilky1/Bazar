@@ -1,7 +1,10 @@
 import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ApplicationProvider } from '../../../../../App';
 import PaymentProcess from '../../Payment/PaymentProcess/PaymentProcess';
 import AddShipmentAddress from '../AddShipmentAddress/AddShipmentAddress'
+import swal from 'sweetalert'
+
 const ShipmentField = () => {
     const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -9,7 +12,7 @@ const ShipmentField = () => {
     const [isSubmitAddress, setIsSubmitAddress] = useState(null);
     const [deliveryService, setDeliveryService] = useState('90 min express delivery');
     const [paymentOption, setPaymentOption] = useState('');
-
+    const history = useHistory()
 
 
     function openModal() {
@@ -24,24 +27,30 @@ const ShipmentField = () => {
             setIsOpen(false);
         }
     };
-    const handlePaymentStatus = (paymentID) => {
+    const handlePaymentStatus = (paymentID, card) => {
         const orderDetail = {
-            user: { ...user },
+            userEmail: user.email,
+            username: user.displayName,
             shipmentData,
             paymentID,
             date: new Date(),
-            cart,
-            process: 'Pending'
+            deliveryService,
+            cart: cart,
+            paymentSystem: card,
+            process: 'Pending',
+            step: 0
         }
-        fetch('https://intense-reef-39470.herokuapp.com/submitOrder', {
+        fetch('https://intense-reef-39470.herokuapp.com/orders', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetail)
         })
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('Order Success')
+                    swal("Payment Success!", "", "success");
+                    setCart([])
+                    history.push('/orders')
                 }
             })
     }
@@ -51,8 +60,9 @@ const ShipmentField = () => {
     const handleDeliverySystem = (service) => {
         setDeliveryService(service)
     }
+    console.log(user.email, cart)
     return (
-        <>
+        <section>
             <div className={isSubmitAddress ? 'd-none' : 'd-block'}>
                 <div className="address-section p-4 shadow bg-white my-4">
                     <div className="header-section d-flex align-items-center justify-content-between">
@@ -124,11 +134,11 @@ const ShipmentField = () => {
                 </div>
                 {cart.length > 0 &&
                     <div style={{ marginTop: '15px', display: paymentOption ? 'none' : 'block', }}>
-                        <i class="fab fa-cc-stripe" onClick={() => setPaymentOption('stripe')} style={{ fontSize: '100px', color: '#6772E5', margin: '20px', cursor: 'pointer' }}></i>
+                        <i class="fas fa-credit-card" onClick={() => setPaymentOption('stripe')} style={{ fontSize: '100px', color: '#6772E5', margin: '20px', cursor: 'pointer' }}></i>
                     </div>
                 }
                 {paymentOption === 'stripe' && <PaymentProcess handlePaymentStatus={handlePaymentStatus} />}
-                {/* <PaymentProcess /> */}
+                {/* <PaymentProcess handlePaymentStatus={handlePaymentStatus} /> */}
                 {
                     cart.length <= 0 &&
                     <div className="">
@@ -137,7 +147,7 @@ const ShipmentField = () => {
                 }
             </div>
             <AddShipmentAddress modalIsOpen={modalIsOpen} closeModal={closeModal} onSubmit={onSubmit} shipmentData={shipmentData} />
-        </>
+        </section>
     );
 };
 

@@ -16,8 +16,12 @@ import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
+import Orders from './components/Orders/Orders';
+import 'rsuite/dist/styles/rsuite-default.css'
+import OrdersDetail from './components/OrderDetail/OrdersDetail';
 
 export const ApplicationProvider = createContext()
+
 function App() {
   const [cart, setCart] = useState([])
   const [user, setUser] = useState(null)
@@ -57,6 +61,12 @@ function App() {
           </Route>
           <PrivetRoute path='/checkout'>
             <Checkout />
+          </PrivetRoute>
+          <PrivetRoute path='/orders'>
+            <Orders />
+          </PrivetRoute>
+          <PrivetRoute path='/ordersDetail/:id'>
+            <OrdersDetail />
           </PrivetRoute>
         </Switch>
       </Router>

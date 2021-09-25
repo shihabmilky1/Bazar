@@ -45,7 +45,7 @@ const Navbar = ({ color, sticky }) => {
                             </a>
                             <ul className="dropdown-menu shadow" aria-labelledby="navbarDropdown">
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Profile</Link></li>
-                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Your Order</Link></li>
+                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/orders">Your Order</Link></li>
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/terms">Terms and Service</Link></li>
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/privacy">Privacy Policy</Link></li>
                                 <li><span onClick={handleUserSignOut} className="dropdown-item dropdownlink ms-2 pe-4 my-3" >Logout</span></li>
