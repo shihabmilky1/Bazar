@@ -3,9 +3,38 @@ import allProduct from '../../../product';
 import SingleProduct from '../SingleProduct/SingleProduct';
 const Product = () => {
     const [product, setProduct] = useState('all product')
+    const [data, setData] = useState(allProduct)
+    // const table = allProduct.filter(td => td.categories === product)
+    // if (product === 'all product') {
+    //     setData(allProduct) //() => setProduct('Bed')
+    // }
+    const handle = (id) => {
+        if (id === 'all product') {
+            setProduct(id)
+            setData(allProduct)
+        }
+        if (id === 'Bed') {
+            let bed = allProduct.filter(bedData => bedData.categories === id)
+            setProduct(id)
+            setData(bed)
+        }
+        if (id === 'Chair') {
+            let chair = allProduct.filter(bedData => bedData.categories === id)
+            setProduct(id)
+            setData(chair)
+        }
+        if (id === 'Sofa') {
+            let sofa = allProduct.filter(bedData => bedData.categories === id)
+            setProduct(id)
+            setData(sofa)
+        }
+        if (id === 'Table') {
+            let table = allProduct.filter(bedData => bedData.categories === id)
+            setData(table)
+        }
+    }
     return (
         <section style={{ background: '#f7f7f7' }}>
-
             <div className="container-fluid ps-0">
                 <div className="row pt-4">
                     <div className="col-md-10 mx-auto d-flex align-items-center justify-content-between">
@@ -17,16 +46,19 @@ const Product = () => {
                                     {product}
                                 </a>
                                 <ul className="dropdown-menu shadow" aria-labelledby="navbarDropdown">
-                                    <li onClick={() => setProduct('Bed')}>
+                                    <li onClick={() => handle('all product')}>
+                                        <p className="dropdown-item dropdownlink ms-2 pe-4 my-3">All Product</p>
+                                    </li>
+                                    <li onClick={() => handle('Bed')}>
                                         <p className="dropdown-item dropdownlink ms-2 pe-4 my-3">Bed</p>
                                     </li>
-                                    <li onClick={() => setProduct('Chair')}>
+                                    <li onClick={() => handle('Chair')}>
                                         <p className="dropdown-item dropdownlink ms-2 pe-4 my-3">Chair</p>
                                     </li>
-                                    <li onClick={() => setProduct('Sofa')}>
+                                    <li onClick={() => handle('Sofa')}>
                                         <p className="dropdown-item dropdownlink ms-2 pe-4 my-3">Sofa</p>
                                     </li>
-                                    <li onClick={() => setProduct('Table')}>
+                                    <li onClick={() => handle('Table')}>
                                         <p className="dropdown-item dropdownlink ms-2 pe-4 my-3">Table</p>
                                     </li>
                                 </ul>
@@ -35,21 +67,10 @@ const Product = () => {
                     </div>
                 </div>
                 <div className="row">
-                    {/* <div className="col-md-2">
-                        <div className="sidebar-container sticky-top" >
-                            <ul className="list-unstyled sidebar">
-                                <li><a href=""><img src={Bed} className="" style={{ width: '15px', marginRight: '10px' }} /> Bed</a></li>
-                                <li><a href=""><img src={Chair} className="" style={{ width: '15px', marginRight: '10px' }} /> Chair</a></li>
-                                <li><a href=""><img src={Sofa} className="" style={{ width: '15px', marginRight: '10px' }} /> Sofa</a></li>
-                                <li><a href=""><img src={Tabel} className="" style={{ width: '15px', marginRight: '10px' }} /> Table</a></li>
-                            </ul>
-                        </div>
-                    </div> */}
                     <div className="col-md-10 mx-auto">
                         <div className="row my-5">
-                            {allProduct.map(product => <SingleProduct product={product}></SingleProduct>)}
+                            {data.map(product => <SingleProduct product={product}></SingleProduct>)}
                         </div>
-
                     </div>
                 </div>
             </div>

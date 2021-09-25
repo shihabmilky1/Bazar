@@ -17,7 +17,7 @@ const Navbar = ({ color, sticky }) => {
             toast.error('Logged Out')
 
         }).catch((error) => {
-            // An error happened.
+            alert('SomeThing Worng')
         });
     }
     return (
@@ -30,7 +30,7 @@ const Navbar = ({ color, sticky }) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
                         <li className="nav-item">
-                            <Link className="nav-link navlink active" to="/">Offer</Link>
+                            <Link className="nav-link navlink active" to="/offer">Offer</Link>
                         </li>
 
                         <li class="nav-item">
@@ -44,7 +44,7 @@ const Navbar = ({ color, sticky }) => {
                                 <img src={user.photoURL ? user.photoURL : UserIcon} className="img-fluid user-icon" alt="" />
                             </a>
                             <ul className="dropdown-menu shadow" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Profile</Link></li>
+                                {/* <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/">Profile</Link></li> */}
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/orders">Your Order</Link></li>
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/terms">Terms and Service</Link></li>
                                 <li><Link className="dropdown-item dropdownlink ms-2 pe-4 my-3" to="/privacy">Privacy Policy</Link></li>

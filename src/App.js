@@ -19,6 +19,7 @@ import "firebase/auth";
 import Orders from './components/Orders/Orders';
 import 'rsuite/dist/styles/rsuite-default.css'
 import OrdersDetail from './components/OrderDetail/OrdersDetail';
+import Offer from './components/Offer/Offer';
 
 export const ApplicationProvider = createContext()
 
@@ -68,6 +69,9 @@ function App() {
           <PrivetRoute path='/ordersDetail/:id'>
             <OrdersDetail />
           </PrivetRoute>
+          <Route path='/offer'>
+            <Offer />
+          </Route>
         </Switch>
       </Router>
     </ApplicationProvider.Provider>
