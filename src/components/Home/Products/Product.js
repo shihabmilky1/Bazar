@@ -4,10 +4,7 @@ import SingleProduct from '../SingleProduct/SingleProduct';
 const Product = () => {
     const [product, setProduct] = useState('all product')
     const [data, setData] = useState(allProduct)
-    // const table = allProduct.filter(td => td.categories === product)
-    // if (product === 'all product') {
-    //     setData(allProduct) //() => setProduct('Bed')
-    // }
+
     const handle = (id) => {
         if (id === 'all product') {
             setProduct(id)
@@ -30,6 +27,7 @@ const Product = () => {
         }
         if (id === 'Table') {
             let table = allProduct.filter(bedData => bedData.categories === id)
+            setProduct(id)
             setData(table)
         }
     }

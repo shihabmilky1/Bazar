@@ -46,3 +46,25 @@
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+@media (max-width: 720px) {
+  .header-content .title {
+    font-size: 20px;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-align: center;
+  }
+  .header-content .subtitle {
+    font-size: 14px;
+    color: #77798c;
+    margin: 0 0 60px;
+    font-family: "Lato", sans-serif;
+  }
+  .header-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
