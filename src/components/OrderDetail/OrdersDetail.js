@@ -7,7 +7,6 @@ let dateFormat = require("dateformat");
 const OrdersDetail = () => {
     const { id } = useParams()
     const [orders, setOrders] = useState([])
-    const [isSticky, setSticky] = useState(false);
     const [error, setError] = useState(null)
     const [loading, setLoding] = useState(false)
 
@@ -28,13 +27,6 @@ const OrdersDetail = () => {
                 setOrders([])
             });
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-                setSticky(true)
-            } else {
-                setSticky(false)
-            }
-        })
     }, [])
     const totalPrice = orders[0]?.cart.reduce((total, cart) => total + parseInt(cart.price), 0)
     const totalDiscount = orders[0]?.cart.reduce((total, cart) => total + parseInt(cart.discount), 0)
@@ -56,7 +48,7 @@ const OrdersDetail = () => {
                 ) : null}
             {orders.length > 0 ? (
                 <section style={{ background: '#F3F4F6' }}>
-                    <Navbar sticky={isSticky} />
+                    <Navbar />
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 mx-auto my-5" >
@@ -81,7 +73,7 @@ const OrdersDetail = () => {
                                             <div className="col-md-3 my-3">
                                                 <div className="p-3 rounded" style={{ border: '1px solid rgba(229,231,235)' }}>
                                                     <strong >Date</strong>
-                                                    <p className="mt-1">{dateFormat(orders[0]?.date, "dS mmmm, yyyy")}</p>
+                                                    <p className="mt-1">{dateFormat(orders[0]?.date, "dS mmmm, yyyy,HH:MM TT")}</p>
                                                 </div>
                                             </div>
                                             <div className="col-md-3 my-3">

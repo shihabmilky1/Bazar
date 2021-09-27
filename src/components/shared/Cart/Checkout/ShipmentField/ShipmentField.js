@@ -60,7 +60,6 @@ const ShipmentField = () => {
     const handleDeliverySystem = (service) => {
         setDeliveryService(service)
     }
-    console.log(user.email, cart)
     return (
         <section>
             <div className={isSubmitAddress ? 'd-none' : 'd-block'}>
@@ -91,11 +90,11 @@ const ShipmentField = () => {
                         </div>
                     </div>
                     <div className="delivery-information">
-                        <div onClick={() => handleDeliverySystem('90 min express delivery')} className={deliveryService === '90 min express delivery' ? "shipment-address-data  delivery-service-active" : "shipment-address-data "}>
+                        <div onClick={() => handleDeliverySystem('90 min express delivery')} className={deliveryService === '90 min express delivery' ? "m-3 shipment-address-data  delivery-service-active" : "m-3 shipment-address-data "}>
                             <h6>Express-Delivery</h6>
                             <p>90 min express delivery</p>
                         </div>
-                        <div onClick={() => handleDeliverySystem('Next Day')} className={deliveryService === 'Next Day' ? "shipment-address-data delivery-service-active" : "shipment-address-data"}>
+                        <div onClick={() => handleDeliverySystem('Next Day')} className={deliveryService === 'Next Day' ? "m-3 shipment-address-data delivery-service-active" : "m-3 shipment-address-data"}>
                             <h6>Next Day</h6>
                             <p>Next Day</p>
                         </div>

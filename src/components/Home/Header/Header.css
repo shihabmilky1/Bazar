@@ -4,6 +4,7 @@
   background-image: url(../../../images/service/furniture-1653225bd210688946d20a4b28cf8b0e.png);
   background-size: cover;
   position: relative;
+  background-position: right;
 }
 .header-content {
   position: absolute;

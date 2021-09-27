@@ -9,7 +9,7 @@ const CheckoutPriceCalculation = () => {
     const discountTotalPrice = cart.reduce((total, cart) => total + parseInt(cart.discount), 0)
     return (
         <div className="order-detail">
-            <h6 className="text-center mb-4">Your Order</h6>
+            <h6 className="text-center mb-4 mt-4 mt-md-0">Your Order</h6>
             {cart.length <= 0
                 && (
                     <div className="my-3 d-flex flex-column align-items-center">

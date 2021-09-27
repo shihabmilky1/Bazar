@@ -100,3 +100,9 @@
   padding: 10px;
   border-radius: 5px;
 }
+
+@media (max-width: 496px) {
+  .delivery-information {
+    display: block !important;
+  }
+} ;

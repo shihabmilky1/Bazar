@@ -52,6 +52,7 @@
   height: 40px;
   width: 40px;
   border-radius: 20px;
+  margin-top: 10px;
 }
 .dropdown-menu[data-bs-popper] {
   left: -135px;
@@ -61,4 +62,33 @@
 }
 .dropdown-menu {
   border: 0px;
+}
+
+@media (max-width: 435px) {
+  .navbar {
+    justify-content: center;
+  }
+  .rs-steps-item-title {
+    font-size: 11px !important;
+  }
+  .order-detail {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 667px) {
+  .rs-steps-item-title {
+    font-size: 11px !important;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav li .navlink {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .order-detail {
+    font-size: 13px;
+  }
 }

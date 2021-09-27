@@ -5,7 +5,6 @@ import OrderData from './OrderData';
 
 const Orders = () => {
     const [orders, setOrders] = useState([])
-    const [isSticky, setSticky] = useState(false);
     const [error, setError] = useState(null)
     const [loading, setLoding] = useState(false)
     const [cart, setCart, user, setUser] = useContext(ApplicationProvider)
@@ -25,14 +24,6 @@ const Orders = () => {
                 }
             })
             .catch(error => setError(error));
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 65) {
-                setSticky(true)
-            } else {
-                setSticky(false)
-            }
-        })
     }, [])
     return (
         <section>
@@ -44,7 +35,7 @@ const Orders = () => {
             ) : null}
             {orders.length > 0 &&
                 <>
-                    <Navbar sticky={isSticky} />
+                    <Navbar />
                     <div className="container">
                         <div className="row my-5">
                             <div className="col-lg-9 mx-auto">
@@ -58,7 +49,7 @@ const Orders = () => {
             }
             {orders.length <= 0 && loading === false && (
                 <>
-                    <Navbar sticky={isSticky} />
+                    <Navbar />
                     <h2 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>No Order Found</h2>
                 </>
             )}

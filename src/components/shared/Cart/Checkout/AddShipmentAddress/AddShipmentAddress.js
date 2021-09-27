@@ -6,7 +6,7 @@ const customStyles = {
     content: {
         top: '50%',
         left: '50%',
-        right: '70%',
+        right: '50%',
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
@@ -20,7 +20,7 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 const AddShipmentAddress = ({ modalIsOpen, closeModal, onSubmit }) => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     return (
         <div>

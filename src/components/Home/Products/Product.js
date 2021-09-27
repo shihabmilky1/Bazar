@@ -33,12 +33,12 @@ const Product = () => {
     }
     return (
         <section style={{ background: '#f7f7f7' }}>
-            <div className="container-fluid ps-0">
-                <div className="row pt-4">
+            <div className="container-fluid ">
+                <div className="row pt-4 ps-5">
                     <div className="col-md-10 mx-auto d-flex align-items-center justify-content-between">
                         {product === 'all product' && <h6>No Category Selected</h6>}
                         {product !== 'all product' && <p className="text-capitalize category-badge" style={{ backgroundColor: '#eaeaea', fontSize: '14px', padding: '2px 6px', fontWeight: '500', borderRadius: '3px' }}><span>{product}</span></p>}
-                        <ul className="list-unstyled">
+                        <ul className="list-unstyled m-0 p-0">
                             <li class="nav-item dropdown navlink pe-5">
                                 <a className="nav-link dropdown-toggle text-capitalize" style={{ color: '#019376' }} href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {product}
@@ -66,7 +66,7 @@ const Product = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-10 mx-auto">
-                        <div className="row my-5">
+                        <div className="row my-5 ">
                             {data.map(product => <SingleProduct product={product}></SingleProduct>)}
                         </div>
                     </div>

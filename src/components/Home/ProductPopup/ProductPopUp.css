@@ -1,7 +1,7 @@
 .close-icon {
   cursor: pointer;
   position: absolute;
-  right: -150px;
+  right: -20px;
   font-size: 20px;
   width: 40px;
   height: 40px;
@@ -9,7 +9,7 @@
   text-align: center;
   line-height: 40px;
   border-radius: 35px;
-  top: -35px;
+  top: -25px;
   z-index: 10 !important;
 }
 .name {
@@ -83,3 +83,9 @@
   background-color: rgb(0, 158, 127);
   border-color: rgb(0, 158, 127);
 }
+
+/* @media (max-width: 480px) {
+  .close-icon {
+    right: -120px;
+  }
+} */

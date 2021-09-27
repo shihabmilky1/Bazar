@@ -10,8 +10,8 @@ function OrderData({ data }) {
     return (
 
         <div style={{ border: '1px solid #efefef' }} className="my-4 shadow-sm">
-            <div className="p-3 d-flex justify-content-between" style={{ borderBottom: '1px solid #efefef' }}>
-                <h5><span>Order Detail - {data._id}</span></h5>
+            <div className="p-3 d-flex justify-content-between " style={{ borderBottom: '1px solid #efefef' }}>
+                <h5 className="order-detail"><span>Order Details - {data._id}</span></h5>
                 <div className="d-flex align-items-center ">
 
                     <Link to={`/ordersDetail/${data._id}`} style={{ textDecoration: 'none', color: 'rgb(1, 147, 118)' }}><i style={{ textDecoration: 'none', color: 'rgb(1, 147, 118)', marginTop: '0px', fontSize: '13px' }} className="me-1 fal fa-eye"></i> See Detail</Link>
@@ -72,33 +72,6 @@ function OrderData({ data }) {
                     <Steps.Item title="Done" />
                 </Steps>
             </div>
-            {/* <div className="mx-auto ms-5">
-                <table class="table table-borderless mx-auto">
-                    <thead>
-                        <tr>
-                            <th scope="col">Item</th>
-                            <th scope="col">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody style={{}}>
-                        {data.cart.map(cartData => (
-                            <tr >
-                                <td scope="col">
-                                    <div className="d-flex align-items-center">
-                                        <img className="me-3" src={cartData.img} alt="" style={{ width: ' 60px ' }} />
-                                        <div className="mb-2">
-                                            <span className="line-clamp mb-2">{cartData.name}</span>
-                                            <p className="common-color fw-bold">${parseInt(cartData.price - cartData.discount)}</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span style={{ color: 'rgb(119, 121, 140)' }}>$ {cartData.price - cartData.discount}</span>
-                                </td>
-                            </tr>))}
-                    </tbody>
-                </table>
-            </div>  */}
         </div>
     )
 }
