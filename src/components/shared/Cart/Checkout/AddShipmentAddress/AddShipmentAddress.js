@@ -23,7 +23,7 @@ const AddShipmentAddress = ({ modalIsOpen, closeModal, onSubmit }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     return (
-        <div>
+        <div className="my-modall">
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

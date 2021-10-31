@@ -95,42 +95,42 @@ const OrdersDetail = () => {
                                             <div className="col-md-6">
                                                 <h5>Total Amount</h5>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }} >Sub Total</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }} >Sub Total</p>
                                                     <span>: ${totalPrice - totalDiscount}</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }} >Shipping Charge</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }} >Shipping Charge</p>
                                                     <span>: $0.00</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }}>Tax</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }}>Tax</p>
                                                     <span>: $0.00</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }} >Discount</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }} >Discount</p>
                                                     <span>: $0.00</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }} >Total</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }} >Total</p>
                                                     <span>: ${totalPrice - totalDiscount}</span>
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
                                                 <h5>Order Detail</h5>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }} >Total Item</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }} >Total Item</p>
                                                     <span>:  {orders[0]?.cart.length} items</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }} >Delivery Time</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }} >Delivery Time</p>
                                                     <span>:  {orders[0]?.deliveryService}</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }}>Shipping Address</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }}>Shipping Address</p>
                                                     <span>:  {orders[0]?.shipmentData.address}</span>
                                                 </div>
                                                 <div className="my-4 d-flex align-items-center">
-                                                    <p style={{ width: '200px', fontWeight: '600' }}>Payment ID</p>
+                                                    <p style={{ width: '100px', fontWeight: '600' }}>Payment ID</p>
                                                     <span>:  {orders[0]?.paymentID}</span>
                                                 </div>
                                             </div>

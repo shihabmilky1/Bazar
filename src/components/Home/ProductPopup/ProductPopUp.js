@@ -62,7 +62,7 @@ const ProductPopUp = ({ modalIsOpen, setIsOpen, product }) => {
                             <img className="img-fluid" src={img ? img : ''} />
                             {discount === '0' ? '' : <span className="badge badge-warning">-${discount}</span>}
                         </div>
-                        <div className="col-md-6 p-5">
+                        <div className="col-md-6 p-4">
                             <h5 className="name">{name}</h5>
                             <p className="quantity">{quantity}pc(s)</p>
                             <p className="description">{description}</p>

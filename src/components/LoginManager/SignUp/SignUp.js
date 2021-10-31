@@ -64,8 +64,17 @@ const SignUp = () => {
         })
     }
     const handleResponse = (res) => {
-        setUser(res.user)
-        toast.success('Login Success')
+        fetch('http://localhost:3001/saveUser', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(res.user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setUser(res.user)
+                toast.success('Login Success')
+            })
+
         history.replace(from);
 
     }

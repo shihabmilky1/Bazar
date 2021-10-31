@@ -81,6 +81,9 @@
     font-size: 11px !important;
     margin-top: 5px;
   }
+  .my-modall .ReactModal__Content {
+    margin-right: -80% !important;
+  }
 }
 
 @media (max-width: 767px) {
